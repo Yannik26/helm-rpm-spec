@@ -12,7 +12,7 @@ Provides:       %{name} = %{version}
 %description
 Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
 
-# %global debug_package %{nil}
+%global debug_package %{nil}
 
 %prep
 %autosetup
@@ -23,8 +23,12 @@ Helm helps you manage Kubernetes applications — Helm Charts help you define, i
 
 
 %install
-%make_install
-install -Dpm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_bindir}/
+cp %{_bindir}/%{name} %{buildroot}%{_bindir}/
+
+
+
 
 %check
 # go test should be here... :)
@@ -40,6 +44,10 @@ install -Dpm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %license LICENSE
 %doc README.md
 
+
+%changelog
+* Wed January 17 2024 Yannik Mueller - 3.13.3-1
+- Initial release
 
 %changelog
 * Wed June 14 2023 Yannik Mueller - 3.13.3-1
