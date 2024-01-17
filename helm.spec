@@ -9,6 +9,7 @@ Source0:        https://github.com/helm/helm/archive/refs/tags/v%{version}.tar.g
 
 Provides:       %{name} = %{version}
 
+BuildRequires: make
 %description
 Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
 
