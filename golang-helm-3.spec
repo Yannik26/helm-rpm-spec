@@ -4,7 +4,7 @@
 # https://github.com/helm/helm
 %global goipath         helm.sh/helm/v3
 %global forgeurl        https://github.com/helm/helm
-Version:                3.13.3
+Version:                3.14.0
 
 %gometa -f
 
